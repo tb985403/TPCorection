@@ -1,0 +1,15 @@
+fr/ufrsciencestech/panier/View/VueConsoleTest.class
+fr/ufrsciencestech/panier/Model/FruitSimpleTest.class
+fr/ufrsciencestech/panier/Model/JusTest.class
+fr/ufrsciencestech/panier/Model/AnanasTest.class
+fr/ufrsciencestech/panier/Model/MacedoineTest.class
+fr/ufrsciencestech/panier/Controler/ControleurTest.class
+fr/ufrsciencestech/panier/Model/PanierTest.class
+fr/ufrsciencestech/panier/Model/BananeTest.class
+fr/ufrsciencestech/panier/View/TestUtils.class
+fr/ufrsciencestech/panier/Model/FraiseTest.class
+fr/ufrsciencestech/panier/View/VueGraphiqueSimpleAWTTest.class
+fr/ufrsciencestech/panier/View/VueGraphiqueListeTest.class
+fr/ufrsciencestech/panier/Model/CeriseTest.class
+fr/ufrsciencestech/panier/Model/OrangeTest.class
+fr/ufrsciencestech/panier/View/VueGraphiqueSimpleTest.class

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VueGraphiqueListe.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Panier</a> &gt; <a href="index.source.html" class="el_package">fr.ufrsciencestech.panier.View</a> &gt; <span class="el_source">VueGraphiqueListe.java</span></div><h1>VueGraphiqueListe.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fr.ufrsciencestech.panier.View;
+
+import fr.ufrsciencestech.panier.Controler.Controleur;
+import fr.ufrsciencestech.panier.Model.Fruit;
+import fr.ufrsciencestech.panier.Model.Panier;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.util.Observable;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+/**
+ *
+ * @author celine
+ */
+public class VueGraphiqueListe extends JFrame implements VueGraphique {
+    private final JButton inc;
+    private final JButton dec;
+    private final JComboBox&lt;Fruit&gt; listeFruits;
+    private JTextArea affichenb;
+
+    public JButton getInc() {
+<span class="fc" id="L31">        return inc;</span>
+    }
+
+    public JButton getDec() {
+<span class="fc" id="L35">        return dec;</span>
+    }
+
+    public JTextArea getAffiche() {
+<span class="fc" id="L39">        return affichenb;</span>
+    }
+    
+    public void setAffiche(JTextArea affiche) {
+<span class="fc" id="L43">        this.affichenb = affiche;</span>
+<span class="fc" id="L44">    }</span>
+
+    public JComboBox&lt;Fruit&gt; getListeAdd() {
+<span class="fc" id="L47">        return listeFruits;</span>
+    }
+    
+    public void addListeFruits(Fruit f){
+<span class="fc" id="L51">        listeFruits.addItem(f);</span>
+<span class="fc" id="L52">        affichenb.setText(affichenb.getText() + &quot;0 &quot; + f + &quot; a &quot; + f.getPrice() + &quot; euros\n&quot; );</span>
+<span class="fc" id="L53">    }</span>
+
+    public VueGraphiqueListe(){
+<span class="fc" id="L56">        super(&quot;Panier&quot;);</span>
+<span class="fc" id="L57">        inc = new JButton(&quot;+&quot;);</span>
+<span class="fc" id="L58">        dec = new JButton(&quot;-&quot;);</span>
+<span class="fc" id="L59">        affichenb = new JTextArea(&quot;Panier de 0 fruits\n&quot;);</span>
+        
+<span class="fc" id="L61">        listeFruits = new JComboBox&lt;Fruit&gt;();</span>
+<span class="fc" id="L62">        JPanel panelN = new JPanel();</span>
+<span class="fc" id="L63">	panelN.setLayout(new FlowLayout());</span>
+<span class="fc" id="L64">        panelN.add(inc);</span>
+<span class="fc" id="L65">        panelN.add(listeFruits);</span>
+<span class="fc" id="L66">        add(panelN, BorderLayout.NORTH);</span>
+
+<span class="fc" id="L68">        add(dec, BorderLayout.SOUTH);</span>
+<span class="fc" id="L69">        add(affichenb, BorderLayout.CENTER);</span>
+        
+<span class="fc" id="L71">        this.setVisible(true);</span>
+        
+        /* Use setName() so AssertJ Swing can find these components easily */
+<span class="fc" id="L74">        inc.setName(&quot;Plus&quot;);</span>
+<span class="fc" id="L75">        dec.setName(&quot;Minus&quot;);</span>
+<span class="fc" id="L76">        affichenb.setName(&quot;Affichage&quot;);</span>
+<span class="fc" id="L77">        listeFruits.setName(&quot;Fruit&quot;);</span>
+<span class="fc" id="L78">    }</span>
+
+    @Override
+    public void update(Observable m, Object o) {
+<span class="fc" id="L82">        Panier p = (Panier) m;</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">        if(p.estVide())</span>
+<span class="fc" id="L84">            getAffiche().setText(&quot;Panier de 0 fruits\n&quot;);</span>
+        else
+<span class="fc" id="L86">            getAffiche().setText(&quot;Panier de &quot; + ((Integer)p.getFruits().size()).toString() + &quot; fruits : &quot; + p.getPrice() + &quot; euros\n&quot;);</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        for(int i = 0 ; i &lt; listeFruits.getItemCount() ; i++)</span>
+        {
+<span class="fc" id="L89">            Fruit f = (Fruit) listeFruits.getItemAt(i);</span>
+<span class="fc" id="L90">            int nb = p.nbFruits(f);</span>
+<span class="fc" id="L91">            affichenb.setText(affichenb.getText() + nb + &quot; &quot; + listeFruits.getItemAt(i) + &quot; a &quot; + listeFruits.getItemAt(i).getPrice() + &quot; euros\n&quot; );</span>
+        }
+<span class="fc" id="L93">    }</span>
+
+    @Override
+    public void addControleur(Controleur c) {
+<span class="fc" id="L97">        getInc().addActionListener(c);</span>
+<span class="fc" id="L98">        getDec().addActionListener(c);</span>
+<span class="fc" id="L99">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControleurListe.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Panier</a> &gt; <a href="index.source.html" class="el_package">fr.ufrsciencestech.panier.Controler</a> &gt; <span class="el_source">ControleurListe.java</span></div><h1>ControleurListe.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fr.ufrsciencestech.panier.Controler;
+
+import fr.ufrsciencestech.panier.Model.Panier;
+import fr.ufrsciencestech.panier.Model.Fruit;
+import fr.ufrsciencestech.panier.Model.PanierPleinException;
+import fr.ufrsciencestech.panier.Model.PanierVideException;
+import fr.ufrsciencestech.panier.View.VueGraphique;
+import fr.ufrsciencestech.panier.View.VueGraphiqueListe;
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+
+/**
+ *
+ * @author celine
+ */
+<span class="fc" id="L21">public class ControleurListe extends Controleur{</span>
+    private VueGraphiqueListe vg;
+    
+    @Override
+    public void actionPerformed(ActionEvent e){
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if(((Component)e.getSource()).getName().equals(&quot;Plus&quot;))</span>
+            try {
+<span class="fc" id="L28">                p.add((Fruit)vg.getListeAdd().getSelectedItem());</span>
+<span class="fc" id="L29">        } catch (PanierPleinException ex) {</span>
+            //JOptionPane.showMessageDialog(null, &quot;Panier plein&quot;, &quot;Erreur&quot;, JOptionPane.ERROR_MESSAGE);
+<span class="fc" id="L31">        }</span>
+        else
+            try {
+<span class="fc" id="L34">                p.remove();</span>
+<span class="fc" id="L35">        } catch (PanierVideException ex) {</span>
+            //JOptionPane.showMessageDialog(null, &quot;Panier vide&quot;, &quot;Erreur&quot;, JOptionPane.ERROR_MESSAGE) ;
+<span class="fc" id="L37">        }</span>
+<span class="fc" id="L38">    }</span>
+    
+    /**
+     *
+     * @param vg
+     */
+    public void setVue(VueGraphique vg){
+<span class="fc" id="L45">        this.vg = (VueGraphiqueListe) vg;</span>
+<span class="fc" id="L46">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

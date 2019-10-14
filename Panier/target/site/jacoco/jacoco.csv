@@ -1,0 +1,21 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Panier,fr.ufrsciencestech.panier.View,VueGraphiqueSimpleAWT,0,95,0,0,0,25,0,7,0,7
+Panier,fr.ufrsciencestech.panier.View,VueGraphiqueListe,0,215,0,4,0,39,0,11,0,9
+Panier,fr.ufrsciencestech.panier.View,VueGraphiqueSimpleAWT.new WindowAdapter() {...},3,6,0,0,2,1,1,1,1,1
+Panier,fr.ufrsciencestech.panier.View,VueConsole,0,46,0,0,0,12,0,4,0,4
+Panier,fr.ufrsciencestech.panier.View,VueGraphiqueSimple,0,89,0,0,0,24,0,7,0,7
+Panier,fr.ufrsciencestech.panier.Model,Orange,0,39,0,2,0,16,0,7,0,6
+Panier,fr.ufrsciencestech.panier.Model,PanierVideException,0,4,0,0,0,2,0,1,0,1
+Panier,fr.ufrsciencestech.panier.Model,Cerise,0,31,0,2,0,12,0,5,0,4
+Panier,fr.ufrsciencestech.panier.Model,Macedoine,0,107,0,12,0,29,0,14,0,8
+Panier,fr.ufrsciencestech.panier.Model,Jus,0,38,0,0,0,12,0,7,0,7
+Panier,fr.ufrsciencestech.panier.Model,Panier,0,338,1,43,0,82,1,37,0,16
+Panier,fr.ufrsciencestech.panier.Model,PanierPleinException,0,4,0,0,0,2,0,1,0,1
+Panier,fr.ufrsciencestech.panier.Model,Fraise,0,31,0,2,0,12,0,5,0,4
+Panier,fr.ufrsciencestech.panier.Model,Banane,0,31,0,2,0,12,0,5,0,4
+Panier,fr.ufrsciencestech.panier.Model,Ananas,0,31,0,2,0,12,0,5,0,4
+Panier,fr.ufrsciencestech.panier.Model,FruitSimple,0,56,0,10,0,13,0,10,0,5
+Panier,fr.ufrsciencestech.panier.Controler,Controleur,0,7,0,0,0,3,0,2,0,2
+Panier,fr.ufrsciencestech.panier.Controler,ControleurListe,0,32,0,2,0,11,0,4,0,3
+Panier,fr.ufrsciencestech.panier.Controler,ControleurSimple,0,22,0,2,0,9,0,3,0,2
+Panier,fr.ufrsciencestech.panier,TestMVC,146,0,0,0,38,0,2,0,2,0

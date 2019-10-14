@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VueConsole.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Panier</a> &gt; <a href="index.source.html" class="el_package">fr.ufrsciencestech.panier.View</a> &gt; <span class="el_source">VueConsole.java</span></div><h1>VueConsole.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fr.ufrsciencestech.panier.View;
+
+import fr.ufrsciencestech.panier.Model.Panier;
+import java.util.Observable;
+import java.util.Observer;
+
+/**
+ *
+ * @author celine
+ */
+public class VueConsole implements Observer{
+    private String trace;
+    
+    /**
+     * @return the trace
+     */
+    public String getTrace() {
+<span class="fc" id="L23">        return trace;</span>
+    }
+
+    /**
+     * @param trace the trace to set
+     */
+    public void setTrace(String trace) {
+<span class="fc" id="L30">        this.trace = trace;</span>
+<span class="fc" id="L31">    }</span>
+
+<span class="fc" id="L33">    public VueConsole(){</span>
+<span class="fc" id="L34">        trace = &quot;Contenance initiale : &quot; + 0;</span>
+<span class="fc" id="L35">        System.out.println(&quot;Contenance initiale : &quot; + 0);</span>
+<span class="fc" id="L36">    }</span>
+    
+    @Override
+    public void update(Observable o, Object arg) {
+<span class="fc" id="L40">        Panier p = (Panier) o;</span>
+<span class="fc" id="L41">        Integer nb = (Integer) p.getSize();</span>
+<span class="fc" id="L42">        setTrace(&quot;Nouvelle contenance : &quot; + nb.toString());</span>
+<span class="fc" id="L43">        System.out.println(&quot;Nouvelle contenance : &quot; + nb.toString());</span>
+<span class="fc" id="L44">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>
